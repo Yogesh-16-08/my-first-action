@@ -1,0 +1,23 @@
+name: Test Custom Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run custom action
+        id: greet
+        uses: ./.github/actions/greet-action
+        with:
+          who-to-greet: "Yogesh"
+
+      - name: Print output
+        run: echo "Time: ${{ steps.greet.outputs.time }}"
