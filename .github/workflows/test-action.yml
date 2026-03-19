@@ -13,6 +13,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Install dependencies
+        run: |
+          cd .github/actions/greet-action
+          npm install
+
       - name: Run custom action
         id: greet
         uses: ./.github/actions/greet-action
