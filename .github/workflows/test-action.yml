@@ -25,4 +25,4 @@ jobs:
           who-to-greet: Yogesh
 
       - name: Print output
-        run: echo Time: ${{ steps.greet.outputs.time }}
+        run: echo "Time: ${{ steps.greet.outputs.time }}"
