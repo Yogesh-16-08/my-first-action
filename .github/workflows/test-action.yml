@@ -23,3 +23,6 @@ jobs:
         uses: ./.github/actions/greet-action
         with:
           who-to-greet: Yogesh
+
+- name: Print output
+        run: echo "The time output was: ${{ steps.greet.outputs.time }}"
